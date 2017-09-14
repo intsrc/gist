@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background: #efefef !important;
+}
+.container {
+  padding: 20px;
+  border-radius: 3px;
+}
+.gist {
+  margin-bottom: 20px;
+}
+pre {
+  background: #f2f2f2;
+  border-radius: 3px;
+}
+.gist-history {
+  padding-bottom: 10px;
+}
+.gist-owner {
+  color: orange;
+  font-weight: bold;
+}
+time {
+  font-size: 14px;
+}

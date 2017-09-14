@@ -1,1 +1,40 @@
-<h1>Hello, world!</h1>
+<div class="container" style="margin-top:60px;background:white">
+  <div class="row">
+    <div class="col-9">
+      <div class="gist">
+        <h4 class="gist-title">Substring function</h4>
+        <div class="gist-history">Gist originally posted by <span class="gist-owner">Fort65</span> | <time>27.09.2017</time></div>
+        <pre>
+          &lt;?php
+            public function substr_text_only($string, $limit, $end='...')
+            {
+                $with_html_count = strlen($string);
+                $without_html_count = strlen(strip_tags($string));
+                $html_tags_length = $with_html_count-$without_html_count;
+
+                return str_limit($string, $limit+$html_tags_length, $end);
+            }
+            ?>
+        </pre>
+      </div>
+      <hr>
+      <div class="gist">
+        <div class="gist-history">Gist originally posted by <span class="gist-owner">Cadele</span> | <time>27.09.2017</time></div>
+        <pre>
+          &lt;?php
+            public function substr_text_only($string, $limit, $end='...')
+            {
+                $with_html_count = strlen($string);
+                $without_html_count = strlen(strip_tags($string));
+                $html_tags_length = $with_html_count-$without_html_count;
+
+                return str_limit($string, $limit+$html_tags_length, $end);
+            }
+            ?>
+        </pre>
+      </div>
+    </div>
+    <div class="col-3">
+    </div>
+  </div>
+</div>
