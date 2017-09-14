@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+        <div class="snippet">
+          <h4 class="snippet-title"><%= @snippet.title %> <% if current_user.id == @snippet.user_id %>[ <a href='<%=edit_snippet_path(@snippet)%>'>Edit</a> | <%= link_to 'Delete', snippet_path(@snippet), method: :delete %> ]<% end %></h4>
+          <div class="snippet-history">Snippet originally posted by <span class="snippet-owner"><%= @snippet.user.username.capitalize %></span> | <time><%= @snippet.created_at.to_date %></time></div>
+          <pre><code class="<%= @snippet.language unless @snippet.language.nil? %>"><%= @snippet.content %></code></pre>
+        </div>
+        <hr>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/default.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>

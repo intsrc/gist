@@ -16,17 +16,14 @@
       <a class="navbar-brand" href="#">Ruby Gist</a>
 
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">Features</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
-          <a class="nav-item nav-link disabled" href="#">Disabled</a>
+          <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
         </div>
         <% if logged_in? %>
           <div class="navbar-text ml-auto mr-4">
             Hello, <%= @current_user.username %>
           </div>
           <div class="navbar-nav">
-            <a class="nav-item nav-link btn btn-outline-success active my-2 my-sm-0" href="#">New gist</a>
+            <a class="nav-item nav-link btn btn-outline-success active my-2 my-sm-0" href="<%= new_snippet_path%>">New gist</a>
             <!-- <a class="nav-item nav-link btn btn-outline-warning mx-2" href="<%= logout_path %>">Logout</a> -->
             <%= link_to 'Logout', logout_path, method: 'DELETE', class: 'nav-item nav-link btn btn-outline-warning mx-2' %>
           </div>

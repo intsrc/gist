@@ -16,9 +16,14 @@
 body {
   background: #efefef !important;
 }
+h1,h2,h3 {
+  margin-bottom: 20px;
+}
 .container {
   padding: 20px;
   border-radius: 3px;
+  margin-top:60px;
+  background:white;
 }
 .snippet {
   margin-bottom: 20px;
@@ -26,6 +31,7 @@ body {
 pre {
   background: #f2f2f2;
   border-radius: 3px;
+  padding: 10px;
 }
 .snippet-history {
   padding-bottom: 10px;
@@ -36,4 +42,11 @@ pre {
 }
 time {
   font-size: 14px;
+}
+textarea {
+  min-height: 250px;
+}
+select {
+  width: 100%;
+  padding: 10px 5px;
 }

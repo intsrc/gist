@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    @users = User.all
+    @snippets = Snippet.order(id: :desc).all
   end
 
 end

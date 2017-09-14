@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   resources :users
-  resources :gitst, only: ['new', 'create', 'show']
+  resources :snippets
 end
