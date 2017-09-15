@@ -15,4 +15,8 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+
+  def is_owner?(resource)
+    logged_in? && current_user.id == resource.user_id
+  end
 end

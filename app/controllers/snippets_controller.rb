@@ -5,7 +5,8 @@ class SnippetsController < ApplicationController
   end
 
   def show
-    @snippet = Snippet.find(params[:id])
+    @snippet  = Snippet.find(params[:id])
+    @comment  = Comment.new
   end
 
   def edit

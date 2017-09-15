@@ -7,6 +7,29 @@
           <pre><code class="<%= @snippet.language unless @snippet.language.nil? %>"><%= @snippet.content %></code></pre>
         </div>
         <hr>
+        <h3>Comments</h3>
+          <% @snippet.comments.each do |comment| %>
+            <div class="comment">
+              <div class="comment-info">
+                Post by <span class="comment-owner"><%= comment.user.username.capitalize %></span> |
+                <time><%= comment.created_at.to_date %></time>
+                <% if is_owner?(comment) %>
+                  [<%= link_to 'Edit', edit_snippet_comment_path(@snippet, comment) %> | <%= link_to 'Delete', snippet_comment_path(@snippet, comment), method: :delete %>]
+                <% end %>
+              </div>
+              <div class="comment-body"><%= comment.content %></div>
+            </div>
+          <% end %>
+        <% if logged_in? %>
+          <%= form_for([@snippet, @comment]) do |f|%>
+            <div class="form-group">
+              <%= f.text_area :content, class: 'form-control' %>
+            </div>
+            <div class="form-group text-right">
+              <%= f.submit 'Post a comment', class: 'btn btn-success' %>
+            </div>
+          <% end %>
+        <% end %>
     </div>
   </div>
 </div>
