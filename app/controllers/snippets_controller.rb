@@ -6,6 +6,7 @@ class SnippetsController < ApplicationController
 
   def show
     @snippet  = Snippet.find(params[:id])
+    @comments = @snippet.comments.page(params[:page])
     @comment  = Comment.new
   end
 

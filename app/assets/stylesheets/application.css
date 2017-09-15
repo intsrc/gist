@@ -60,3 +60,9 @@ select {
   margin: 5px 0px;
   white-space: pre;
 }
+.pagination {
+  justify-content: center;
+}
+.pagination > span {
+  margin: 0 2px;
+}
