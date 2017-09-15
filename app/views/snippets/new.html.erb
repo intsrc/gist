@@ -3,7 +3,7 @@
     <div class="col-12">
       <h3>Snippet</h3>
       <%= form_for(@snippet) do |f| %>
-        <%= render 'snippets/error_messages' %>
+        <%= render 'layouts/error_messages', object: @snippet %>
 
         <div class="form-group">
           <%= f.label :title %>

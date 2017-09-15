@@ -3,7 +3,7 @@
     <div class="col-12">
       <h3>Comment for << <%= @comment.snippet.title %> >></h3>
       <%= form_for([@comment.snippet, @comment]) do |f| %>
-        <%= render 'comments/error_messages' %>
+        <%= render 'layouts/error_messages', object: @comment %>
 
         <div class="form-group">
           <%= f.text_area :content, class: 'form-control' %>

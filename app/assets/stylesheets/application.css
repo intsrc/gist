@@ -36,9 +36,10 @@ pre {
 .snippet-history {
   padding-bottom: 10px;
 }
-.snippet-owner, .comment-owner {
+.snippet-owner > a, .comment-owner {
   color: orange;
   font-weight: bold;
+  text-decoration: none;
 }
 time {
   font-size: 14px;

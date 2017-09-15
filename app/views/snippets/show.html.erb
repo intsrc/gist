@@ -23,6 +23,7 @@
           <%= paginate @comments %>
         <% if logged_in? %>
           <%= form_for([@snippet, @comment]) do |f|%>
+            <%= render 'layouts/error_messages', object: @comment %>
             <div class="form-group">
               <%= f.text_area :content, class: 'form-control' %>
             </div>
@@ -34,6 +35,3 @@
     </div>
   </div>
 </div>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/default.min.css">
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>

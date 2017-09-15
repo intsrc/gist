@@ -3,9 +3,13 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(comments_params)
     @comment.assign_attributes(user_id: current_user.id, snippet_id: params[:snippet_id])
-    @comment.save
-
-    redirect_to snippet_path(params[:snippet_id])
+    if @comment.save
+      redirect_to snippet_path(params[:snippet_id])
+    else
+      @snippet = @comment.snippet
+      @comments = @snippet.comments.page(params[:page])
+      render 'snippets/show'
+    end
   end
 
   def edit

@@ -1,6 +1,6 @@
 <div class="container">
   <%= form_for(@user) do |f| %>
-    <%= render 'users/error_messages' %>
+    <%= render 'layouts/error_messages', object: @user %>
 
     <div class="form-group">
       <%= f.label :username %>

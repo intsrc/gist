@@ -17,6 +17,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def snippets
+    user = User.find(params[:id])
+    @snippets = user.snippets.page(params[:page])
+    flash.now[:info] = "#{user.username.capitalize} snippets!"
+    render 'pages/index'
+  end
+
   private
 
   def user_params
